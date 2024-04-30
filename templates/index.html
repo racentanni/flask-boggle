@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %} Boggle {% endblock %}
+{% block content %}
+<h1>Boogle!</h1>
+<div class="instructions">
+    <h3>How to Play</h3>
+    <ul>
+        <li>Starting the Game: Click the "Start" button to begin. A grid of random letters will appear.</li>
+
+        <li>Finding Words: Form words from connecting letters that are next to each other in any direction - up, down
+            left, right, or diagnally. You cannot use the same letter twice in one word.</li>
+
+        <li>End of the Game: When the timer reaches zero, the game ends. Your score will be displayed along with the 
+            high score and the number of games played. You can start a new game by pressing the Start button again.
+        </li>
+    </ul>
+</div>
+
+<form  id="start_form" action="/start" method="post">
+    <input type="submit" class="btn" value="Start">
+</form>
+
+{% endblock content %}

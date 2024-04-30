@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %} Boggle Game Board {% endblock %}
+{% block content %}
+<div>
+    <p>
+        Score: <b id="game_score">0</b>
+    </p>
+    <p> Timer: <b id=""timer">60</b></p>
+</div>
+<table class="container" id="board">
+    <tbody>
+        {% for list in board %}
+        <tr>
+            {% for letter in list %}
+            <td>{{letter}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<form id="user_guess_form" action="/validate_guess" method="post" >
+    <label for="guess"> Guess a word:
+        <input type="text" name="guess" id="guess" required autofocus>
+        <button id="submit_guess_btn">Guess</button>
+    </label>
+</form>
+
+
+<div id="feedback_area">
+    <p id="guess_feedback"></p>
+</div>
+
+{% endblock content %}
